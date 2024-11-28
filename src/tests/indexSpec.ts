@@ -24,7 +24,7 @@ describe('Testing bad request response due not available image', () => {
     }
 )});
 
-describe('Testing bad request response due not available image', () => {
+describe('Testing sucessfull image generation', () => {
     it('gets the api endpoint', async () => {
         const response = await request.get('/api/v1/imageOperations/resize?height=400&width=400&filename=encenadaport');
         expect(response.status).toBe(200);

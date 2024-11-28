@@ -25,6 +25,13 @@ routes.get('/resize',  (req: express.Request, res: express.Response) => {
         
     }
 
+    if(height <= 0 || width <= 0 ){
+        
+        res.status(400).json({error: 'Invalid parameters. Width and height should be positive number greater than zero'});
+        return;
+        
+    }
+
     if(!availableFiles.includes(fileNameWithExtension)){
         res.status(400).json({error: `File not available for resizing. Available files are ${availableFiles}`});
         return;
@@ -41,14 +48,19 @@ routes.get('/resize',  (req: express.Request, res: express.Response) => {
         return;
     }
 
-    const resizeOperation = resize.resizeImage(width, height, fileToProcess, outputFilePath);
-
-    if(resizeOperation !== `sucess`){
-        res.status(500).json({error: `Internal server error ${resizeOperation}`});
-
+    const resizeImage = async() => {
+        try {
+            const result = await resize.resizeImage(width, height, fileToProcess, outputFilePath);
+            console.log(result); // "Success"
+            res.status(200).sendFile(outputFilePath);
+        } catch (error) {
+            console.error("Error resizing image:", error);
+        }
     }
 
-    res.status(200).sendFile(outputFilePath);
+    resizeImage();
+  
+
     
 });
 

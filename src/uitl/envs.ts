@@ -1,7 +1,11 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
+import path from "path"
+
+const maindDir = path.join(__dirname, `/..`);
+const appDir = path.join(maindDir, `/..`, );
+const imageDirectory = path.join(appDir, `assets/images`);
+const imageOutputDirectory = path.join(appDir, `assets/output`);
 
 export default {
-    imageDirectory: process.env.IMAGE_DIRECTORY,
-    imageOutputDirectory: process.env.IMAGE_OUTPUT_DIRECTORY,
+    imageDirectory,
+    imageOutputDirectory
 }
