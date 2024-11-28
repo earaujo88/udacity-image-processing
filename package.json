@@ -1,0 +1,36 @@
+{
+  "name": "udacity-image-processing",
+  "version": "1.0.0",
+  "description": "udacity nodejs training",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm run build && npm run jasmine",
+    "build": "npx tsc",
+    "dev": "nodemon src/app.ts",
+    "jasmine": "jasmine"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jasmine": "^5.4.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "sharp": "^0.33.5",
+    "supertest": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jasmine": "^5.1.4",
+    "@types/node": "^22.9.3",
+    "@types/sharp": "^0.32.0",
+    "@types/supertest": "^6.0.2",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
