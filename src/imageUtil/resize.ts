@@ -2,15 +2,17 @@ import sharp from "sharp";
 
 
 
-async function resizeImage(width: number, height: number, filePath: string, outputFilePath: string): Promise<void>{
+function resizeImage(width: number, height: number, filePath: string, outputFilePath: string): string{
 
-   await sharp(filePath)
-        .resize(width, height)
-        .toFile(outputFilePath, function (err) {
-            if (err) {
-                console.log(err);
-            }
-        });
+    sharp(filePath)
+    .resize(width, height)
+    .toFile(outputFilePath, function (err) {
+        if (err) {
+            return err;
+        }
+    })
+    return `sucess`;
+
     
 }
 

@@ -14,10 +14,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "jasmine": "^5.4.0",
-    "jasmine-spec-reporter": "^7.0.0",
-    "sharp": "^0.33.5",
-    "supertest": "^7.0.0"
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
@@ -28,8 +25,11 @@
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jasmine": "^5.4.0",
+    "jasmine-spec-reporter": "^7.0.0",
     "nodemon": "^3.1.7",
     "prettier": "^2.5.1",
+    "supertest": "^7.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   }

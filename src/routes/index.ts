@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import envs from '../uitl/envs';
 import sharp from 'sharp';
+import resize from '../imageUtil/resize';
 const routes = express.Router();
 
 routes.get('/resize',  (req: express.Request, res: express.Response) => {
@@ -40,15 +41,14 @@ routes.get('/resize',  (req: express.Request, res: express.Response) => {
         return;
     }
 
-    sharp(fileToProcess)
-    .resize(width, height)
-    .toFile(outputFilePath, function (err) {
-        if (err) {
-            res.status(500).json({error: `Internal server error ${err}`});
-            console.log(err);
-        }
-        res.status(200).sendFile(outputFilePath);
-    })    
+    const resizeOperation = resize.resizeImage(width, height, fileToProcess, outputFilePath);
+
+    if(resizeOperation !== `sucess`){
+        res.status(500).json({error: `Internal server error ${resizeOperation}`});
+
+    }
+
+    res.status(200).sendFile(outputFilePath);
     
 });
 
