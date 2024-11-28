@@ -9,7 +9,7 @@ Repo for the project related to the back end with nodejs course on udacity
 
 ### Configuring images folder
 
-Use the env file to update to your images directory and desired output images directory. Feel free to use the images provided under assets/images directory.
+Create a env file and add your images directory and desired output images directory. Feel free to use the images provided under assets/images directory. env example provided.
 
 ### Available npm scripts
 **test**: execute a suite of testes
