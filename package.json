@@ -7,12 +7,14 @@
     "test": "npm run build && npm run jasmine",
     "build": "npx tsc",
     "dev": "nodemon src/app.ts",
-    "jasmine": "jasmine"
+    "jasmine": "jasmine",
+    "lint": "eslint . --ext .ts",
+    "lintFix": "eslint . --ext .ts  --fix",
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "sharp": "^0.33.5"
   },
@@ -22,6 +24,7 @@
     "@types/node": "^22.9.3",
     "@types/sharp": "^0.32.0",
     "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",

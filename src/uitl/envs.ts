@@ -1,11 +1,11 @@
-import path from "path"
+import path from 'path';
 
-const maindDir = path.join(__dirname, `/..`);
-const appDir = path.join(maindDir, `/..`, );
-const imageDirectory = path.join(appDir, `assets/images`);
-const imageOutputDirectory = path.join(appDir, `assets/output`);
+const maindDir: string = path.join(__dirname, `/..`);
+const appDir: string = path.join(maindDir, `/..`);
+const imageDirectory: string = path.join(appDir, `assets/images`);
+const imageOutputDirectory: string = path.join(appDir, `assets/output`);
 
 export default {
-    imageDirectory,
-    imageOutputDirectory
-}
+  imageDirectory,
+  imageOutputDirectory
+};
