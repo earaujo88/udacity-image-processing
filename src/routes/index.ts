@@ -3,9 +3,11 @@ import fs from 'fs';
 import path from 'path';
 import envs from '../uitl/envs';
 import resize from '../imageUtil/resize';
+import utilities from '../uitl/utilities';
 const routes = express.Router();
 
 routes.get('/resize', (req: express.Request, res: express.Response) => {
+
   const width: number = parseInt(req.query.width as string);
   const height: number = parseInt(req.query.height as string);
   const fileName: string = req.query.filename as string;
@@ -23,7 +25,7 @@ routes.get('/resize', (req: express.Request, res: express.Response) => {
     return;
   }
 
-  if (height <= 0 || width <= 0) {
+  if (height <= 0 || width <= 0 || !utilities.hasDigits(req.query.width as string) || !utilities.hasDigits(req.query.width as string)) {
     res.status(400).json({
       error:
         'Invalid parameters. Width and height should be positive number greater than zero'

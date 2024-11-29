@@ -53,3 +53,13 @@ describe('Testing sucessfull image generation', () => {
     expect(response.status).toBe(200);
   });
 });
+
+describe('Testing bad request with mixed string and numbers', () => {
+    it('gets the api endpoint', async () => {
+      const response = await request.get(
+        '/api/v1/imageOperations/resize?height=400ddd&width=400ddd&filename=encenadaport'
+      );
+      expect(response.status).toBe(400);
+    });
+  });
+  
